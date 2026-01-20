@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Department Code of Ethics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #1a1a1a;
+            border: 3px solid #7ab8e1;
+            box-shadow: 0 0 30px rgba(122, 184, 225, 0.3);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a3a4a 0%, #0d1f2a 100%);
+            border-bottom: 3px solid #7ab8e1;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: "CLASSIFIED";
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 12px;
+            color: #7ab8e1;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .header::after {
+            content: "ETHICS COMMITTEE";
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 12px;
+            color: #7ab8e1;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #7ab8e1;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .version {
+            font-size: 12px;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #7ab8e1, transparent);
+            margin: 30px 0;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .article {
+            margin-bottom: 35px;
+            padding: 20px;
+            background-color: #0f0f0f;
+            border-left: 4px solid #7ab8e1;
+        }
+
+        .article-title {
+            font-size: 18px;
+            color: #7ab8e1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .article-content {
+            color: #d0d0d0;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .article-content ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .article-content li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .article-content li::before {
+            content: "■";
+            position: absolute;
+            left: 0;
+            color: #7ab8e1;
+            font-size: 12px;
+        }
+
+        .footer {
+            background-color: #0f0f0f;
+            border-top: 3px solid #7ab8e1;
+            padding: 30px 40px;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: #888;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .warning-box {
+            background-color: #0d1f2a;
+            border: 2px solid #7ab8e1;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .warning-text {
+            color: #7ab8e1;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                color: black;
+            }
+            
+            .container {
+                border: 2px solid black;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="subtitle">Official Document</div>
+            <h1>Medical Department<br>Code of Ethics</h1>
+            <div class="version">Version 1.0 - Base Document</div>
+        </div>
+
+        <div class="content">
+            <div class="article">
+                <div class="article-title">Article I: Authority</div>
+                <div class="article-content">
+                    All Medical Department activities fall under Ethics Committee jurisdiction and oversight.
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="article">
+                <div class="article-title">Article II: Duty of Care</div>
+                <div class="article-content">
+                    <ul>
+                        <li>Provide medical attention to all Foundation personnel regardless of rank</li>
+                        <li>Respond to medical emergencies promptly and professionally</li>
+                        <li>Maintain sterile and safe medical environments</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="article">
+                <div class="article-title">Article III: Patient Rights</div>
+                <div class="article-content">
+                    <ul>
+                        <li>All individuals receiving treatment are entitled to competent care</li>
+                        <li>Medical treatment cannot be withheld as punishment</li>
+                        <li>Respect patient dignity during examinations and procedures</li>
+                        <li>Groups of Interest members found alive must receive necessary medical treatment</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="article">
+                <div class="article-title">Article IV: Documentation</div>
+                <div class="article-content">
+                    <ul>
+                        <li>Keep thorough medical records for all treatments and diagnoses</li>
+                        <li>Report unusual symptoms or anomalous medical conditions immediately</li>
+                        <li>No alteration or destruction of medical files</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="article">
+                <div class="article-title">Article V: Collaboration</div>
+                <div class="article-content">
+                    <ul>
+                        <li>Work with Scientific Department on approved medical testing</li>
+                        <li>Coordinate with Security during containment breach injuries</li>
+                        <li>Share critical health information with relevant departments when necessary</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="article">
+                <div class="article-title">Article VI: Violations</div>
+                <div class="article-content">
+                    Failure to comply with this Code will result in Ethics Committee review and potential disciplinary measures.
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-text">BASE DOCUMENT - SUBJECT TO EXPANSION AND REVISION</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-text">
+                This document is issued and maintained by the Ethics Committee.<br>
+                All Medical Department personnel are required to acknowledge and comply with these standards.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
