@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation Code of Ethics - Department Directory</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #000000;
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .top-bar {
+            background-color: #2c8d49;
+            padding: 5px 0;
+            text-align: center;
+            font-size: 11px;
+            letter-spacing: 3px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #0d2616 0%, #0a1a0f 100%);
+            border: 4px solid #2c8d49;
+            box-shadow: 0 0 50px rgba(44, 141, 73, 0.4);
+        }
+
+        .ec-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: #2c8d49;
+            color: #000;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 56px;
+            color: #2c8d49;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(44, 141, 73, 0.3);
+        }
+
+        .header-subtitle {
+            font-size: 18px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-top: 15px;
+        }
+
+        .intro-section {
+            text-align: center;
+            margin-bottom: 70px;
+            padding: 0 100px;
+        }
+
+        .intro-section p {
+            color: #b0b0b0;
+            font-size: 16px;
+            line-height: 2;
+            margin-bottom: 15px;
+        }
+
+        .divider {
+            height: 3px;
+            background: linear-gradient(to right, transparent, #2c8d49, transparent);
+            margin: 60px auto;
+            max-width: 600px;
+        }
+
+        .departments-section {
+            margin-top: 60px;
+        }
+
+        .department-card {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            border: 4px solid;
+            margin-bottom: 35px;
+            padding: 0;
+            display: flex;
+            align-items: stretch;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .department-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transition: left 0.6s;
+        }
+
+        .department-card:hover::before {
+            left: 100%;
+        }
+
+        .department-card:hover {
+            transform: translateX(10px);
+        }
+
+        .dept-color-bar {
+            width: 12px;
+            flex-shrink: 0;
+        }
+
+        .dept-content {
+            display: flex;
+            align-items: center;
+            padding: 45px 50px;
+            flex-grow: 1;
+        }
+
+        .dept-icon-section {
+            font-size: 80px;
+            margin-right: 50px;
+            flex-shrink: 0;
+        }
+
+        .dept-text-section {
+            flex-grow: 1;
+        }
+
+        .dept-name {
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .dept-desc {
+            color: #999;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .dept-link {
+            display: inline-block;
+            padding: 10px 25px;
+            border: 2px solid;
+            background-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        /* Security Department Styling */
+        .security-card {
+            border-color: #a7a7a7;
+            box-shadow: 0 5px 30px rgba(167, 167, 167, 0.2);
+        }
+
+        .security-card:hover {
+            box-shadow: 0 10px 50px rgba(167, 167, 167, 0.4);
+        }
+
+        .security-card .dept-color-bar {
+            background: linear-gradient(180deg, #a7a7a7 0%, #707070 100%);
+        }
+
+        .security-card .dept-icon-section {
+            color: #a7a7a7;
+        }
+
+        .security-card .dept-name {
+            color: #a7a7a7;
+        }
+
+        .security-card .dept-link {
+            border-color: #a7a7a7;
+            color: #a7a7a7;
+        }
+
+        .security-card .dept-link:hover {
+            background-color: #a7a7a7;
+            color: #000;
+        }
+
+        /* Scientific Department Styling */
+        .scientific-card {
+            border-color: #ff4444;
+            box-shadow: 0 5px 30px rgba(255, 68, 68, 0.2);
+        }
+
+        .scientific-card:hover {
+            box-shadow: 0 10px 50px rgba(255, 68, 68, 0.4);
+        }
+
+        .scientific-card .dept-color-bar {
+            background: linear-gradient(180deg, #ff4444 0%, #8b0000 100%);
+        }
+
+        .scientific-card .dept-icon-section {
+            color: #ff4444;
+        }
+
+        .scientific-card .dept-name {
+            color: #ff4444;
+        }
+
+        .scientific-card .dept-link {
+            border-color: #ff4444;
+            color: #ff4444;
+        }
+
+        .scientific-card .dept-link:hover {
+            background-color: #ff4444;
+            color: #000;
+        }
+
+        /* Medical Department Styling */
+        .medical-card {
+            border-color: #7ab8e1;
+            box-shadow: 0 5px 30px rgba(122, 184, 225, 0.2);
+        }
+
+        .medical-card:hover {
+            box-shadow: 0 10px 50px rgba(122, 184, 225, 0.4);
+        }
+
+        .medical-card .dept-color-bar {
+            background: linear-gradient(180deg, #7ab8e1 0%, #4a88b1 100%);
+        }
+
+        .medical-card .dept-icon-section {
+            color: #7ab8e1;
+        }
+
+        .medical-card .dept-name {
+            color: #7ab8e1;
+        }
+
+        .medical-card .dept-link {
+            border-color: #7ab8e1;
+            color: #7ab8e1;
+        }
+
+        .medical-card .dept-link:hover {
+            background-color: #7ab8e1;
+            color: #000;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 50px 40px;
+            background: linear-gradient(135deg, #0d2616 0%, #0a1a0f 100%);
+            border: 3px solid #2c8d49;
+            margin-top: 80px;
+        }
+
+        .footer-title {
+            color: #2c8d49;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .footer-text {
+            color: #777;
+            font-size: 13px;
+            line-height: 2;
+        }
+
+        @media (max-width: 968px) {
+            .dept-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .dept-icon-section {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .intro-section {
+                padding: 0 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+                letter-spacing: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">ETHICS COMMITTEE - AUTHORIZED PERSONNEL ONLY</div>
+
+    <div class="container">
+        <div class="header">
+            <div class="ec-badge">ETHICS COMMITTEE</div>
+            <h1>CODE OF ETHICS</h1>
+            <div class="header-subtitle">Department Directory</div>
+        </div>
+
+        <div class="intro-section">
+            <p>All Foundation personnel are required to operate within the ethical guidelines established by the Ethics Committee.</p>
+            <p>Select your department below to access the applicable Code of Ethics and familiarize yourself with departmental standards.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="departments-section">
+            <a href="https://frostnetwork.org/siteecho/coe/sd/" class="department-card security-card">
+                <div class="dept-color-bar"></div>
+                <div class="dept-content">
+                    <div class="dept-icon-section">🛡️</div>
+                    <div class="dept-text-section">
+                        <div class="dept-name">Security Department</div>
+                        <div class="dept-desc">
+                            Responsible for maintaining secure containment of anomalous entities, protecting Foundation facilities and personnel, and neutralizing internal and external threats to operational security.
+                        </div>
+                        <div class="dept-link">Access Code of Ethics →</div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://frostnetwork.org/siteecho/coe/scd/" class="department-card scientific-card">
+                <div class="dept-color-bar"></div>
+                <div class="dept-content">
+                    <div class="dept-icon-section">🔬</div>
+                    <div class="dept-text-section">
+                        <div class="dept-name">Scientific Department</div>
+                        <div class="dept-desc">
+                            Conducts research and experimentation on anomalous objects and entities to better understand their properties, behaviors, and potential applications while maintaining ethical research standards.
+                        </div>
+                        <div class="dept-link">Access Code of Ethics →</div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://frostnetwork.org/siteecho/coe/md/" class="department-card medical-card">
+                <div class="dept-color-bar"></div>
+                <div class="dept-content">
+                    <div class="dept-icon-section">⚕️</div>
+                    <div class="dept-text-section">
+                        <div class="dept-name">Medical Department</div>
+                        <div class="dept-desc">
+                            Provides comprehensive medical care and emergency response services to all Foundation personnel, ensuring health and safety standards are maintained across all operational areas.
+                        </div>
+                        <div class="dept-link">Access Code of Ethics →</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="footer">
+            <div class="footer-title">Notice</div>
+            <div class="footer-text">
+                This directory is maintained by the Ethics Committee.<br>
+                All personnel must acknowledge and comply with their department's Code of Ethics.<br>
+                Violations will be investigated and may result in disciplinary action including termination.<br>
+                Report ethical concerns directly to the Ethics Committee.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
